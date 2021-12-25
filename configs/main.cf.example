@@ -1,0 +1,9 @@
+# ログの出力設定
+maillog_file = /var/log/mail.log
+
+# SMTPリレーの設定
+relayhost = 
+smtp_sasl_auth_enable = 
+smtp_sasl_mechanism_filter = 
+smtp_sasl_security_options = 
+smtp_sasl_password_maps = 
