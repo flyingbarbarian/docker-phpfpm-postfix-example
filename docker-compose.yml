@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  docker-phpfpm-postfix-example:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    image: docker-phpfpm-postfix-example-image:latest
+    container_name: docker-phpfpm-postfix-example-container
+    volumes:
+      # Postfixの設定をマウントする
+      - type: bind
+        source: ./configs/main.cf
+        target: /etc/postfix/main.cf
+      # SASL認証のパスワードをマウントする
+      - type: bind
+        source: ./configs/sasl_passwd
+        target: /etc/postfix/sasl_passwd
