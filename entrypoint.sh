@@ -15,5 +15,6 @@ postmap /etc/postfix/sasl_passwd
 # postfixの設定変更を反映させる
 postfix reload
 
-# コンテナの起動を維持するため
-tail -f /dev/null
+# dockerのbase imageの元々のENTRYPOINTとCMDを実行する
+# つまり、php-fpmを起動する
+. /usr/local/bin/docker-php-entrypoint php-fpm
